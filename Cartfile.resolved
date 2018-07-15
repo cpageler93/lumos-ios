@@ -1,0 +1,4 @@
+github "Alamofire/Alamofire" "4.7.3"
+github "Awalz/SwiftyCam" "2.6.0"
+github "SVProgressHUD/SVProgressHUD" "2.2.5"
+github "thepeaklab/NetworkService" "0.1.0"
