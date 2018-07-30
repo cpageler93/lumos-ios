@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Lumos
+
+  Created by Christoph Pageler on 30.07.18.
+  Copyright © 2018 Christoph Pageler. All rights reserved.
+*/
+
+
+"find_server" = "Server finden";
+"no_server_found" = "Kein Server gefunden";
+"server_preperation_failed" = "Verbindung fehlgeschlagen";
+"server_searching" = "Suchen";
+"server_setup_title" = "Erste Einrichtung";
+
+"overview_title" = "Übersicht";

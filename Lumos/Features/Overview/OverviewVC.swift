@@ -21,6 +21,8 @@ class OverviewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "overview_title".localized()
+
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(actionRefreshControlValueChanged), for: .valueChanged)
         self.refreshControl = refreshControl

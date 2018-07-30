@@ -9,6 +9,7 @@
 
 import UIKit
 import SwiftyCam
+import AVFoundation
 
 
 class CameraVC: SwiftyCamViewController {
@@ -28,8 +29,16 @@ class CameraVC: SwiftyCamViewController {
         doubleTapCameraSwitch = false
         updateFlashIcon()
         navigationItem.rightBarButtonItem = nil
-        videoQuality = .high
+        videoQuality = .resolution3840x2160
         shouldUseDeviceOrientation = true
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if let stillImageOutput = session.outputs.first(where: { ($0 as? AVCaptureStillImageOutput) != nil }) as? AVCaptureStillImageOutput {
+            stillImageOutput.isHighResolutionStillImageOutputEnabled = true
+        }
     }
 
     private func updateFlashIcon() {

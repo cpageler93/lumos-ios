@@ -24,6 +24,7 @@ class InitialVC: UIViewController {
         super.viewDidLoad()
 
         buttonFindServer.alpha = 0
+        buttonFindServer.setTitle("find_server".localized(), for: .normal)
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             self.animateLaunchScreen()

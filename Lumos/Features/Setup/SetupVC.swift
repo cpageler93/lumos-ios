@@ -25,8 +25,11 @@ class SetupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "server_setup_title".localized()
+
         networkService.isAutoResolveEnabled = true
         networkService.delegate = self
+
 
         performSearch()
     }
@@ -39,8 +42,9 @@ class SetupVC: UIViewController {
 
     private func performSearch() {
         services.removeAll()
+        tableViewServer.alpha = 0
         navigationItem.leftBarButtonItem = nil
-        SVProgressHUD.show()
+        SVProgressHUD.show(withStatus: "server_searching".localized())
         networkService.startBrowse(type: .tcp(name: "lumos"))
 
         timerSearchTimeout = Timer.scheduledTimer(withTimeInterval: 10, repeats: false, block: { timer in
@@ -64,6 +68,7 @@ class SetupVC: UIViewController {
         }
 
         tableViewServer.reloadData()
+        tableViewServer.alpha = services.count > 0 ? 1 : 0
     }
 
     private func triggerSearchTimeout() {
@@ -73,7 +78,7 @@ class SetupVC: UIViewController {
 
         guard services.count == 0 else { return }
 
-        SVProgressHUD.showError(withStatus: "No Server found")
+        SVProgressHUD.showError(withStatus: "no_server_found".localized())
         navigationItem.leftBarButtonItem = barButtonItemReload
     }
 
@@ -119,7 +124,7 @@ extension SetupVC: UITableViewDelegate {
                     SVProgressHUD.dismiss()
                     self.performSegue(withIdentifier: "overview", sender: self)
                 } else {
-                    SVProgressHUD.showError(withStatus: "Failure")
+                    SVProgressHUD.showError(withStatus: "server_preperation_failed".localized())
                 }
                 tableView.deselectRow(at: indexPath, animated: true)
                 self.barButtonItemReload.isEnabled = true

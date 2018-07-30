@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59147714210FA88700A0EE52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59147717210FA88700A0EE52 /* Localizable.strings */; };
+		59147715210FA88700A0EE52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59147717210FA88700A0EE52 /* Localizable.strings */; };
+		5914771B210FA8AE00A0EE52 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5914771A210FA8AE00A0EE52 /* String+Localized.swift */; };
+		5914771C210FA8AE00A0EE52 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5914771A210FA8AE00A0EE52 /* String+Localized.swift */; };
 		5930495520FB8A400083AF40 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5930495420FB8A400083AF40 /* Camera.storyboard */; };
 		593D46E820FD2E390005734F /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974311B20F338550018969C /* InitialVC.swift */; };
 		593D46E920FD2E390005734F /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974312820F33E110018969C /* SetupVC.swift */; };
@@ -30,7 +34,7 @@
 		593D46FD20FD2E390005734F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593FE0F320FB5A580092B89F /* Settings.storyboard */; };
 		593D46FE20FD2E390005734F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5974310620F334020018969C /* Assets.xcassets */; };
 		593D46FF20FD2E390005734F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974310320F334010018969C /* Main.storyboard */; };
-		593D470720FD2EBC0005734F /* 23Angle.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593D470620FD2EBC0005734F /* 23Angle.xcassets */; };
+		593D470720FD2EBC0005734F /* Lumos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593D470620FD2EBC0005734F /* Lumos.xcassets */; };
 		593D470A20FD2F2C0005734F /* WeddingPoelmeyer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593D470920FD2F2C0005734F /* WeddingPoelmeyer.xcassets */; };
 		593FE0F420FB5A580092B89F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593FE0F320FB5A580092B89F /* Settings.storyboard */; };
 		593FE0F620FB5A600092B89F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593FE0F520FB5A600092B89F /* SettingsVC.swift */; };
@@ -56,9 +60,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59147716210FA88700A0EE52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		59147718210FA89700A0EE52 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5914771A210FA8AE00A0EE52 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		5930495420FB8A400083AF40 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		593D470420FD2E390005734F /* WeddingPoelmeyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingPoelmeyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		593D470620FD2EBC0005734F /* 23Angle.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 23Angle.xcassets; sourceTree = "<group>"; };
+		593D470620FD2EBC0005734F /* Lumos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Lumos.xcassets; sourceTree = "<group>"; };
 		593D470920FD2F2C0005734F /* WeddingPoelmeyer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WeddingPoelmeyer.xcassets; sourceTree = "<group>"; };
 		593FE0F320FB5A580092B89F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		593FE0F520FB5A600092B89F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -112,11 +119,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59147719210FA8A400A0EE52 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5914771A210FA8AE00A0EE52 /* String+Localized.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		593D470820FD2F0D0005734F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				5974310620F334020018969C /* Assets.xcassets */,
-				593D470620FD2EBC0005734F /* 23Angle.xcassets */,
+				593D470620FD2EBC0005734F /* Lumos.xcassets */,
 				593D470920FD2F2C0005734F /* WeddingPoelmeyer.xcassets */,
 			);
 			path = Assets;
@@ -161,6 +176,7 @@
 		597430FE20F334010018969C /* Lumos */ = {
 			isa = PBXGroup;
 			children = (
+				59147719210FA8A400A0EE52 /* Extensions */,
 				5974312420F33C950018969C /* Views */,
 				5974311720F336930018969C /* Services */,
 				5974311A20F336EA0018969C /* Features */,
@@ -169,6 +185,7 @@
 				5974312220F33C000018969C /* NavigationControllerRootSegue.swift */,
 				5974310B20F334020018969C /* Info.plist */,
 				596C45D1210F959C005CFE3B /* Info-WeddingPoelmeyer.plist */,
+				59147717210FA88700A0EE52 /* Localizable.strings */,
 			);
 			path = Lumos;
 			sourceTree = "<group>";
@@ -298,6 +315,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 597430F320F334010018969C;
 			productRefGroup = 597430FD20F334010018969C /* Products */;
@@ -319,6 +337,7 @@
 				593D470A20FD2F2C0005734F /* WeddingPoelmeyer.xcassets in Resources */,
 				593D46FA20FD2E390005734F /* Camera.storyboard in Resources */,
 				593D46FB20FD2E390005734F /* LaunchScreen.storyboard in Resources */,
+				59147715210FA88700A0EE52 /* Localizable.strings in Resources */,
 				593D46FC20FD2E390005734F /* Overview.storyboard in Resources */,
 				593D46FD20FD2E390005734F /* Settings.storyboard in Resources */,
 				593D46FE20FD2E390005734F /* Assets.xcassets in Resources */,
@@ -330,10 +349,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				593D470720FD2EBC0005734F /* 23Angle.xcassets in Resources */,
+				593D470720FD2EBC0005734F /* Lumos.xcassets in Resources */,
 				5974312B20F33E1A0018969C /* Setup.storyboard in Resources */,
 				5930495520FB8A400083AF40 /* Camera.storyboard in Resources */,
 				5974310A20F334020018969C /* LaunchScreen.storyboard in Resources */,
+				59147714210FA88700A0EE52 /* Localizable.strings in Resources */,
 				5974312120F33BCF0018969C /* Overview.storyboard in Resources */,
 				593FE0F420FB5A580092B89F /* Settings.storyboard in Resources */,
 				5974310720F334020018969C /* Assets.xcassets in Resources */,
@@ -401,6 +421,7 @@
 				593D46EB20FD2E390005734F /* SettingsVC.swift in Sources */,
 				593D46EC20FD2E390005734F /* ImageDTO.swift in Sources */,
 				593D46ED20FD2E390005734F /* CameraVC.swift in Sources */,
+				5914771C210FA8AE00A0EE52 /* String+Localized.swift in Sources */,
 				593D46EE20FD2E390005734F /* OverviewImageCollectionViewCell.swift in Sources */,
 				593D46EF20FD2E390005734F /* NavigationControllerRootSegue.swift in Sources */,
 				593D46F020FD2E390005734F /* AppDelegate.swift in Sources */,
@@ -419,6 +440,7 @@
 				593FE0F620FB5A600092B89F /* SettingsVC.swift in Sources */,
 				59C1307020F499BE00760A78 /* ImageDTO.swift in Sources */,
 				593FE0FB20FB601D0092B89F /* CameraVC.swift in Sources */,
+				5914771B210FA8AE00A0EE52 /* String+Localized.swift in Sources */,
 				596C476420F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift in Sources */,
 				5974312320F33C000018969C /* NavigationControllerRootSegue.swift in Sources */,
 				5974310020F334010018969C /* AppDelegate.swift in Sources */,
@@ -430,6 +452,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		59147717210FA88700A0EE52 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59147716210FA88700A0EE52 /* en */,
+				59147718210FA89700A0EE52 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5974310320F334010018969C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -500,6 +531,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -553,6 +585,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -560,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -606,6 +640,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -628,7 +663,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.pageler.christoph.lumos.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS Development";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -651,7 +686,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.pageler.christoph.lumos.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS Development";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
