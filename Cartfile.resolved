@@ -1,4 +1,5 @@
 github "Alamofire/Alamofire" "4.7.3"
 github "Awalz/SwiftyCam" "2.6.0"
 github "SVProgressHUD/SVProgressHUD" "2.2.5"
+github "realm/realm-cocoa" "v3.7.4"
 github "thepeaklab/NetworkService" "0.1.0"

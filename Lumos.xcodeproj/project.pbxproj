@@ -1,0 +1,692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5930495520FB8A400083AF40 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5930495420FB8A400083AF40 /* Camera.storyboard */; };
+		593D46E820FD2E390005734F /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974311B20F338550018969C /* InitialVC.swift */; };
+		593D46E920FD2E390005734F /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974312820F33E110018969C /* SetupVC.swift */; };
+		593D46EA20FD2E390005734F /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974311820F336C20018969C /* HTTPService.swift */; };
+		593D46EB20FD2E390005734F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593FE0F520FB5A600092B89F /* SettingsVC.swift */; };
+		593D46EC20FD2E390005734F /* ImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C1306F20F499BE00760A78 /* ImageDTO.swift */; };
+		593D46ED20FD2E390005734F /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593FE0FA20FB601D0092B89F /* CameraVC.swift */; };
+		593D46EE20FD2E390005734F /* OverviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C476320F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift */; };
+		593D46EF20FD2E390005734F /* NavigationControllerRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974312220F33C000018969C /* NavigationControllerRootSegue.swift */; };
+		593D46F020FD2E390005734F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597430FF20F334010018969C /* AppDelegate.swift */; };
+		593D46F120FD2E390005734F /* OverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974311E20F33BC60018969C /* OverviewVC.swift */; };
+		593D46F220FD2E390005734F /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974312520F33C9F0018969C /* LargeButton.swift */; };
+		593D46F420FD2E390005734F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974311320F336320018969C /* Alamofire.framework */; };
+		593D46F520FD2E390005734F /* NetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974311520F3368E0018969C /* NetworkService.framework */; };
+		593D46F620FD2E390005734F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974312C20F379EC0018969C /* SVProgressHUD.framework */; };
+		593D46F720FD2E390005734F /* SwiftyCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593FE0F720FB5FDE0092B89F /* SwiftyCam.framework */; };
+		593D46F920FD2E390005734F /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974312A20F33E1A0018969C /* Setup.storyboard */; };
+		593D46FA20FD2E390005734F /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5930495420FB8A400083AF40 /* Camera.storyboard */; };
+		593D46FB20FD2E390005734F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974310820F334020018969C /* LaunchScreen.storyboard */; };
+		593D46FC20FD2E390005734F /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974312020F33BCF0018969C /* Overview.storyboard */; };
+		593D46FD20FD2E390005734F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593FE0F320FB5A580092B89F /* Settings.storyboard */; };
+		593D46FE20FD2E390005734F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5974310620F334020018969C /* Assets.xcassets */; };
+		593D46FF20FD2E390005734F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974310320F334010018969C /* Main.storyboard */; };
+		593D470720FD2EBC0005734F /* 23Angle.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593D470620FD2EBC0005734F /* 23Angle.xcassets */; };
+		593D470A20FD2F2C0005734F /* WeddingPoelmeyer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593D470920FD2F2C0005734F /* WeddingPoelmeyer.xcassets */; };
+		593FE0F420FB5A580092B89F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593FE0F320FB5A580092B89F /* Settings.storyboard */; };
+		593FE0F620FB5A600092B89F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593FE0F520FB5A600092B89F /* SettingsVC.swift */; };
+		593FE0F820FB5FDE0092B89F /* SwiftyCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593FE0F720FB5FDE0092B89F /* SwiftyCam.framework */; };
+		593FE0FB20FB601D0092B89F /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593FE0FA20FB601D0092B89F /* CameraVC.swift */; };
+		596C476420F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C476320F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift */; };
+		5974310020F334010018969C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597430FF20F334010018969C /* AppDelegate.swift */; };
+		5974310520F334010018969C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974310320F334010018969C /* Main.storyboard */; };
+		5974310720F334020018969C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5974310620F334020018969C /* Assets.xcassets */; };
+		5974310A20F334020018969C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974310820F334020018969C /* LaunchScreen.storyboard */; };
+		5974311420F336320018969C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974311320F336320018969C /* Alamofire.framework */; };
+		5974311620F3368E0018969C /* NetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974311520F3368E0018969C /* NetworkService.framework */; };
+		5974311920F336C20018969C /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974311820F336C20018969C /* HTTPService.swift */; };
+		5974311C20F338550018969C /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974311B20F338550018969C /* InitialVC.swift */; };
+		5974311F20F33BC60018969C /* OverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974311E20F33BC60018969C /* OverviewVC.swift */; };
+		5974312120F33BCF0018969C /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974312020F33BCF0018969C /* Overview.storyboard */; };
+		5974312320F33C000018969C /* NavigationControllerRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974312220F33C000018969C /* NavigationControllerRootSegue.swift */; };
+		5974312620F33C9F0018969C /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974312520F33C9F0018969C /* LargeButton.swift */; };
+		5974312920F33E110018969C /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974312820F33E110018969C /* SetupVC.swift */; };
+		5974312B20F33E1A0018969C /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974312A20F33E1A0018969C /* Setup.storyboard */; };
+		5974312D20F379EC0018969C /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974312C20F379EC0018969C /* SVProgressHUD.framework */; };
+		59C1307020F499BE00760A78 /* ImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C1306F20F499BE00760A78 /* ImageDTO.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5930495420FB8A400083AF40 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
+		593D470420FD2E390005734F /* WeddingPoelmeyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingPoelmeyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		593D470620FD2EBC0005734F /* 23Angle.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 23Angle.xcassets; sourceTree = "<group>"; };
+		593D470920FD2F2C0005734F /* WeddingPoelmeyer.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WeddingPoelmeyer.xcassets; sourceTree = "<group>"; };
+		593FE0F320FB5A580092B89F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		593FE0F520FB5A600092B89F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		593FE0F720FB5FDE0092B89F /* SwiftyCam.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyCam.framework; path = Carthage/Build/iOS/SwiftyCam.framework; sourceTree = "<group>"; };
+		593FE0FA20FB601D0092B89F /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		596C45D1210F959C005CFE3B /* Info-WeddingPoelmeyer.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-WeddingPoelmeyer.plist"; sourceTree = SOURCE_ROOT; };
+		596C476320F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		597430FC20F334010018969C /* Lumos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		597430FF20F334010018969C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5974310420F334010018969C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5974310620F334020018969C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5974310920F334020018969C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5974310B20F334020018969C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5974311320F336320018969C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		5974311520F3368E0018969C /* NetworkService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkService.framework; path = Carthage/Build/iOS/NetworkService.framework; sourceTree = "<group>"; };
+		5974311820F336C20018969C /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
+		5974311B20F338550018969C /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
+		5974311E20F33BC60018969C /* OverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewVC.swift; sourceTree = "<group>"; };
+		5974312020F33BCF0018969C /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
+		5974312220F33C000018969C /* NavigationControllerRootSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRootSegue.swift; sourceTree = "<group>"; };
+		5974312520F33C9F0018969C /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		5974312820F33E110018969C /* SetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupVC.swift; sourceTree = "<group>"; };
+		5974312A20F33E1A0018969C /* Setup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setup.storyboard; sourceTree = "<group>"; };
+		5974312C20F379EC0018969C /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		59C1306F20F499BE00760A78 /* ImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDTO.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		593D46F320FD2E390005734F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				593D46F420FD2E390005734F /* Alamofire.framework in Frameworks */,
+				593D46F520FD2E390005734F /* NetworkService.framework in Frameworks */,
+				593D46F620FD2E390005734F /* SVProgressHUD.framework in Frameworks */,
+				593D46F720FD2E390005734F /* SwiftyCam.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597430F920F334010018969C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5974311420F336320018969C /* Alamofire.framework in Frameworks */,
+				5974311620F3368E0018969C /* NetworkService.framework in Frameworks */,
+				5974312D20F379EC0018969C /* SVProgressHUD.framework in Frameworks */,
+				593FE0F820FB5FDE0092B89F /* SwiftyCam.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		593D470820FD2F0D0005734F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5974310620F334020018969C /* Assets.xcassets */,
+				593D470620FD2EBC0005734F /* 23Angle.xcassets */,
+				593D470920FD2F2C0005734F /* WeddingPoelmeyer.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		593FE0F220FB5A4B0092B89F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				593FE0F320FB5A580092B89F /* Settings.storyboard */,
+				593FE0F520FB5A600092B89F /* SettingsVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		593FE0F920FB60100092B89F /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				5930495420FB8A400083AF40 /* Camera.storyboard */,
+				593FE0FA20FB601D0092B89F /* CameraVC.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		597430F320F334010018969C = {
+			isa = PBXGroup;
+			children = (
+				597430FE20F334010018969C /* Lumos */,
+				597430FD20F334010018969C /* Products */,
+				5974311220F336320018969C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		597430FD20F334010018969C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				597430FC20F334010018969C /* Lumos.app */,
+				593D470420FD2E390005734F /* WeddingPoelmeyer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		597430FE20F334010018969C /* Lumos */ = {
+			isa = PBXGroup;
+			children = (
+				5974312420F33C950018969C /* Views */,
+				5974311720F336930018969C /* Services */,
+				5974311A20F336EA0018969C /* Features */,
+				593D470820FD2F0D0005734F /* Assets */,
+				597430FF20F334010018969C /* AppDelegate.swift */,
+				5974312220F33C000018969C /* NavigationControllerRootSegue.swift */,
+				5974310B20F334020018969C /* Info.plist */,
+				596C45D1210F959C005CFE3B /* Info-WeddingPoelmeyer.plist */,
+			);
+			path = Lumos;
+			sourceTree = "<group>";
+		};
+		5974311220F336320018969C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				593FE0F720FB5FDE0092B89F /* SwiftyCam.framework */,
+				5974312C20F379EC0018969C /* SVProgressHUD.framework */,
+				5974311520F3368E0018969C /* NetworkService.framework */,
+				5974311320F336320018969C /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5974311720F336930018969C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5974311820F336C20018969C /* HTTPService.swift */,
+				59C1306F20F499BE00760A78 /* ImageDTO.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5974311A20F336EA0018969C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				5974310820F334020018969C /* LaunchScreen.storyboard */,
+				5974310320F334010018969C /* Main.storyboard */,
+				5974311B20F338550018969C /* InitialVC.swift */,
+				5974311D20F33BBA0018969C /* Overview */,
+				5974312720F33E060018969C /* Setup */,
+				593FE0F220FB5A4B0092B89F /* Settings */,
+				593FE0F920FB60100092B89F /* Camera */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		5974311D20F33BBA0018969C /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				5974312020F33BCF0018969C /* Overview.storyboard */,
+				5974311E20F33BC60018969C /* OverviewVC.swift */,
+				596C476320F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		5974312420F33C950018969C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5974312520F33C9F0018969C /* LargeButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5974312720F33E060018969C /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				5974312A20F33E1A0018969C /* Setup.storyboard */,
+				5974312820F33E110018969C /* SetupVC.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		593D46E620FD2E390005734F /* WeddingPoelmeyer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 593D470120FD2E390005734F /* Build configuration list for PBXNativeTarget "WeddingPoelmeyer" */;
+			buildPhases = (
+				593D46E720FD2E390005734F /* Sources */,
+				593D46F320FD2E390005734F /* Frameworks */,
+				593D46F820FD2E390005734F /* Resources */,
+				593D470020FD2E390005734F /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeddingPoelmeyer;
+			productName = 23Angle;
+			productReference = 593D470420FD2E390005734F /* WeddingPoelmeyer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		597430FB20F334010018969C /* Lumos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5974310E20F334020018969C /* Build configuration list for PBXNativeTarget "Lumos" */;
+			buildPhases = (
+				597430F820F334010018969C /* Sources */,
+				597430F920F334010018969C /* Frameworks */,
+				597430FA20F334010018969C /* Resources */,
+				5974311120F336040018969C /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lumos;
+			productName = 23Angle;
+			productReference = 597430FC20F334010018969C /* Lumos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		597430F420F334010018969C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Christoph Pageler";
+				TargetAttributes = {
+					593D46E620FD2E390005734F = {
+						LastSwiftMigration = 1000;
+					};
+					597430FB20F334010018969C = {
+						CreatedOnToolsVersion = 9.4;
+					};
+				};
+			};
+			buildConfigurationList = 597430F720F334010018969C /* Build configuration list for PBXProject "Lumos" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 597430F320F334010018969C;
+			productRefGroup = 597430FD20F334010018969C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				597430FB20F334010018969C /* Lumos */,
+				593D46E620FD2E390005734F /* WeddingPoelmeyer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		593D46F820FD2E390005734F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				593D46F920FD2E390005734F /* Setup.storyboard in Resources */,
+				593D470A20FD2F2C0005734F /* WeddingPoelmeyer.xcassets in Resources */,
+				593D46FA20FD2E390005734F /* Camera.storyboard in Resources */,
+				593D46FB20FD2E390005734F /* LaunchScreen.storyboard in Resources */,
+				593D46FC20FD2E390005734F /* Overview.storyboard in Resources */,
+				593D46FD20FD2E390005734F /* Settings.storyboard in Resources */,
+				593D46FE20FD2E390005734F /* Assets.xcassets in Resources */,
+				593D46FF20FD2E390005734F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597430FA20F334010018969C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				593D470720FD2EBC0005734F /* 23Angle.xcassets in Resources */,
+				5974312B20F33E1A0018969C /* Setup.storyboard in Resources */,
+				5930495520FB8A400083AF40 /* Camera.storyboard in Resources */,
+				5974310A20F334020018969C /* LaunchScreen.storyboard in Resources */,
+				5974312120F33BCF0018969C /* Overview.storyboard in Resources */,
+				593FE0F420FB5A580092B89F /* Settings.storyboard in Resources */,
+				5974310720F334020018969C /* Assets.xcassets in Resources */,
+				5974310520F334010018969C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		593D470020FD2E390005734F /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NetworkService.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyCam.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NetworkService.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyCam.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		5974311120F336040018969C /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NetworkService.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyCam.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NetworkService.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyCam.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		593D46E720FD2E390005734F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				593D46E820FD2E390005734F /* InitialVC.swift in Sources */,
+				593D46E920FD2E390005734F /* SetupVC.swift in Sources */,
+				593D46EA20FD2E390005734F /* HTTPService.swift in Sources */,
+				593D46EB20FD2E390005734F /* SettingsVC.swift in Sources */,
+				593D46EC20FD2E390005734F /* ImageDTO.swift in Sources */,
+				593D46ED20FD2E390005734F /* CameraVC.swift in Sources */,
+				593D46EE20FD2E390005734F /* OverviewImageCollectionViewCell.swift in Sources */,
+				593D46EF20FD2E390005734F /* NavigationControllerRootSegue.swift in Sources */,
+				593D46F020FD2E390005734F /* AppDelegate.swift in Sources */,
+				593D46F120FD2E390005734F /* OverviewVC.swift in Sources */,
+				593D46F220FD2E390005734F /* LargeButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597430F820F334010018969C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5974311C20F338550018969C /* InitialVC.swift in Sources */,
+				5974312920F33E110018969C /* SetupVC.swift in Sources */,
+				5974311920F336C20018969C /* HTTPService.swift in Sources */,
+				593FE0F620FB5A600092B89F /* SettingsVC.swift in Sources */,
+				59C1307020F499BE00760A78 /* ImageDTO.swift in Sources */,
+				593FE0FB20FB601D0092B89F /* CameraVC.swift in Sources */,
+				596C476420F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift in Sources */,
+				5974312320F33C000018969C /* NavigationControllerRootSegue.swift in Sources */,
+				5974310020F334010018969C /* AppDelegate.swift in Sources */,
+				5974311F20F33BC60018969C /* OverviewVC.swift in Sources */,
+				5974312620F33C9F0018969C /* LargeButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5974310320F334010018969C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5974310420F334010018969C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5974310820F334020018969C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5974310920F334020018969C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		593D470220FD2E390005734F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 488D924Q6G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Info-WeddingPoelmeyer.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.pageler.christoph.lumos.ios.wedding.poelmeyer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS Wedding Poelmeyer Development";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		593D470320FD2E390005734F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 488D924Q6G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Info-WeddingPoelmeyer.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.pageler.christoph.lumos.ios.wedding.poelmeyer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS Wedding Poelmeyer AdHoc";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		5974310C20F334020018969C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5974310D20F334020018969C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5974310F20F334020018969C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 488D924Q6G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Lumos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.pageler.christoph.lumos.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS Development";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5974311020F334020018969C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 488D924Q6G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Lumos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.pageler.christoph.lumos.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS Development";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		593D470120FD2E390005734F /* Build configuration list for PBXNativeTarget "WeddingPoelmeyer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				593D470220FD2E390005734F /* Debug */,
+				593D470320FD2E390005734F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		597430F720F334010018969C /* Build configuration list for PBXProject "Lumos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5974310C20F334020018969C /* Debug */,
+				5974310D20F334020018969C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5974310E20F334020018969C /* Build configuration list for PBXNativeTarget "Lumos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5974310F20F334020018969C /* Debug */,
+				5974311020F334020018969C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 597430F420F334010018969C /* Project object */;
+}
