@@ -120,10 +120,15 @@ extension CameraVC: UINavigationControllerDelegate { }
 
 extension CameraVC: UIImagePickerControllerDelegate {
 
+    // SWIFT 4.2 CODE
+    //    func imagePickerController(_ picker: UIImagePickerController,
+    //                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.originalImage] as? UIImage else { return }
+// SWIFT 4.2 CODE
+//        guard let image = info[.originalImage] as? UIImage else { return }
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
         HTTPService.shared.uploadImage(image) { success in
             print("success: \(success)")
         }

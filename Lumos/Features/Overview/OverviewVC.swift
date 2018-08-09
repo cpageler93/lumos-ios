@@ -28,6 +28,17 @@ class OverviewVC: UIViewController {
         self.refreshControl = refreshControl
         collectionViewImages.addSubview(refreshControl)
 
+        let flowLayout = collectionViewImages.collectionViewLayout as? UICollectionViewFlowLayout
+        flowLayout?.sectionHeadersPinToVisibleBounds = true
+
+        NotificationCenter.default.addObserver(forName: HTTPService.didUpdateUploadsNotification,
+                                               object: nil, queue: nil)
+        { notification in
+            DispatchQueue.main.async {
+                self.collectionViewImages.reloadSections(IndexSet(integer: 0))
+            }
+        }
+
         updateImages()
     }
 
@@ -70,6 +81,20 @@ extension OverviewVC: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
+                                                                       withReuseIdentifier: "OverviewUploadCollectionReusableView",
+                                                                       for: indexPath) as! OverviewUploadCollectionReusableView
+            return view
+        default:
+            return UICollectionReusableView()
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionViewImages.dequeueReusableCell(withReuseIdentifier: "OverviewImageCollectionViewCell", for: indexPath) as! OverviewImageCollectionViewCell
         let image = images[indexPath.row]
@@ -87,7 +112,6 @@ extension OverviewVC: UICollectionViewDataSource {
 
 
 extension OverviewVC: UICollectionViewDelegate {
-
 
 }
 
@@ -127,6 +151,17 @@ extension OverviewVC: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let isUploading = HTTPService.shared.imageUploads.count > 0
+        if isUploading {
+            return CGSize(width: collectionView.frame.size.width, height: 50)
+        } else {
+            return CGSize.zero
+        }
     }
 
 }

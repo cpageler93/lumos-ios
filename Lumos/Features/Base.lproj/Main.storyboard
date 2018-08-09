@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gSw-js-niC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gSw-js-niC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +14,7 @@
         <!--InitialVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="InitialVC" customModule="WeddingPoelmeyer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialVC" customModule="Lumos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +25,7 @@
                                     <segue destination="Qkf-eN-OQP" kind="embed" identifier="embeddedLaunchScreen" id="109-dc-nqB"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEM-03-27L" customClass="LargeButton" customModule="WeddingPoelmeyer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEM-03-27L" customClass="LargeButton" customModule="Lumos" customModuleProvider="target">
                                 <rect key="frame" x="20" y="599" width="335" height="48"/>
                                 <color key="backgroundColor" name="Primary"/>
                                 <state key="normal" title="Find Server">
@@ -35,17 +36,25 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tBb-5r-3cE">
-                                <rect key="frame" x="177.5" y="531" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="499" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldS-p3-aZY">
+                                <rect key="frame" x="170" y="540" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tBb-5r-3cE" firstAttribute="centerX" secondItem="rhE-8L-TD1" secondAttribute="centerX" id="4iz-GU-psQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yEM-03-27L" secondAttribute="bottom" constant="20" id="BbN-k0-caJ"/>
                             <constraint firstItem="yEM-03-27L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DnN-s4-68K"/>
+                            <constraint firstItem="ldS-p3-aZY" firstAttribute="top" secondItem="tBb-5r-3cE" secondAttribute="bottom" constant="21" id="EKd-EL-uLu"/>
                             <constraint firstAttribute="bottom" secondItem="rhE-8L-TD1" secondAttribute="bottom" id="TdK-yM-srf"/>
                             <constraint firstItem="yEM-03-27L" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XPk-eN-tKI"/>
-                            <constraint firstItem="yEM-03-27L" firstAttribute="top" secondItem="tBb-5r-3cE" secondAttribute="bottom" constant="48" id="YBZ-54-zdJ"/>
+                            <constraint firstItem="yEM-03-27L" firstAttribute="top" secondItem="tBb-5r-3cE" secondAttribute="bottom" constant="80" id="YBZ-54-zdJ"/>
+                            <constraint firstItem="ldS-p3-aZY" firstAttribute="centerX" secondItem="tBb-5r-3cE" secondAttribute="centerX" id="aEU-wE-S6V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yEM-03-27L" secondAttribute="trailing" constant="20" id="dBv-cq-fpA"/>
                             <constraint firstAttribute="trailing" secondItem="rhE-8L-TD1" secondAttribute="trailing" id="hL5-pP-uYD"/>
                             <constraint firstItem="rhE-8L-TD1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oOm-Jk-T47"/>
@@ -57,8 +66,9 @@
                     <connections>
                         <outlet property="activityIndicatorView" destination="tBb-5r-3cE" id="JwV-VO-83p"/>
                         <outlet property="buttonFindServer" destination="yEM-03-27L" id="09c-J1-PxI"/>
-                        <segue destination="N6v-XK-Gkn" kind="custom" identifier="overview" customClass="NavigationControllerRootSegue" customModule="WeddingPoelmeyer" customModuleProvider="target" animates="NO" id="2XH-BI-Mtc"/>
-                        <segue destination="RvX-ks-qcC" kind="show" identifier="setup" customClass="NavigationControllerRootSegue" customModule="WeddingPoelmeyer" customModuleProvider="target" id="3xF-0l-QBn"/>
+                        <outlet property="labelUserInfo" destination="ldS-p3-aZY" id="lxO-Hr-lYU"/>
+                        <segue destination="N6v-XK-Gkn" kind="custom" identifier="overview" customClass="NavigationControllerRootSegue" customModule="Lumos" customModuleProvider="target" animates="NO" id="2XH-BI-Mtc"/>
+                        <segue destination="RvX-ks-qcC" kind="show" identifier="setup" customClass="NavigationControllerRootSegue" customModule="Lumos" customModuleProvider="target" id="3xF-0l-QBn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,7 +120,7 @@
     </scenes>
     <resources>
         <namedColor name="Primary">
-            <color red="1" green="0.23100000619888306" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
     <color key="tintColor" name="Primary"/>

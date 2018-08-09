@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--Camera-->
         <scene sceneID="scG-IZ-E4E">
             <objects>
-                <viewController id="DKL-8o-CvN" customClass="CameraVC" customModule="WeddingPoelmeyer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DKL-8o-CvN" customClass="CameraVC" customModule="Lumos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ko-hE-2cL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,11 +106,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="367" height="331"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TlT-9O-gGq">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TlT-9O-gGq">
                             <rect key="frame" x="0.0" y="0.0" width="367" height="331"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="TlT-9O-gGq" firstAttribute="leading" secondItem="zX0-Y1-hHC" secondAttribute="leading" id="1XS-AB-TlV"/>
                         <constraint firstAttribute="trailing" secondItem="TlT-9O-gGq" secondAttribute="trailing" id="DeW-kN-xU6"/>
@@ -145,5 +146,5 @@
         <image name="iconCameraSwitch" width="27" height="21"/>
         <image name="iconCameraTrigger" width="62" height="62"/>
     </resources>
-    <color key="tintColor" name="Primary"/>
+    <color key="tintColor" name="PrimaryLight"/>
 </document>

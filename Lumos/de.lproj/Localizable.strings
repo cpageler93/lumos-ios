@@ -12,5 +12,12 @@
 "server_preperation_failed" = "Verbindung fehlgeschlagen";
 "server_searching" = "Suchen";
 "server_setup_title" = "Erste Einrichtung";
+"searching_for_server" = "Suche nach\n\"%@\"";
+"server_not_found" = "\"%@\" nicht gefunden";
 
 "overview_title" = "Übersicht";
+
+"singular_photo" = "Foto";
+"plural_photo" = "Fotos";
+"uploading_photo" = "lädt %@ hoch";
+"failed" = "fehlgeschlagen";

@@ -118,7 +118,7 @@ extension SetupVC: UITableViewDelegate {
         SVProgressHUD.show()
         barButtonItemReload.isEnabled = false
         view.isUserInteractionEnabled = false
-        HTTPService.shared.prepareForServer(at: address, port: service.0.port) { success in
+        HTTPService.shared.prepareForServer(at: address, port: service.0.port, name: service.0.name) { success in
             DispatchQueue.main.async {
                 if success {
                     SVProgressHUD.dismiss()

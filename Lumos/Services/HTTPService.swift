@@ -21,6 +21,10 @@ class HTTPService {
     private let sessionManagerDefault: Alamofire.SessionManager
     private let sessionManagerSmallTimeout: Alamofire.SessionManager
 
+    public private(set) var imageUploads: [ImageUpload] = []
+
+    public static let didUpdateUploadsNotification = Notification.Name("didUpdateUploadsNotification")
+
     private init() {
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 5
@@ -55,11 +59,15 @@ class HTTPService {
         }
     }
 
-    public func prepareForServer(at address: String, port: Int, completion: @escaping ((Bool) -> Void)) {
+    public func prepareForServer(at address: String,
+                                 port: Int,
+                                 name: String,
+                                 completion: @escaping ((Bool) -> Void)) {
         testConnection(address: address, port: port) { success in
             if success {
                 UserDefaults.standard.set(address, forKey: "address")
                 UserDefaults.standard.set(port, forKey: "port")
+                UserDefaults.standard.set(name, forKey: "serverName")
                 UserDefaults.standard.synchronize()
                 self.baseURL = self.baseURLFrom(address: address, port: port)
             }
@@ -116,13 +124,20 @@ class HTTPService {
         }
     }
 
-    public func uploadImage(_ image: UIImage, completion: @escaping ((Bool) -> Void)) {
+    public func uploadImage(_ image: UIImage, completion: ((Bool) -> Void)?) {
         guard let baseURL = baseURL else {
-            completion(false)
+            completion?(false)
             return
         }
-        guard let imageData = image.jpegData(compressionQuality: 1) else {
-            completion(false)
+
+        let upload = ImageUpload(image: image, status: .uploading)
+        imageUploads.append(upload)
+        sendDidUpdateUploadsNotification()
+
+// SWIFT 4.2 CODE
+//        guard let imageData = image.jpegData(compressionQuality: 1) else {
+        guard let imageData = UIImageJPEGRepresentation(image, 1) else {
+            completion?(false)
             return
         }
         let base64ImageString = imageData.base64EncodedString()
@@ -135,10 +150,65 @@ class HTTPService {
                                         "image": base64ImageString
                                       ],
                                       encoding: JSONEncoding.default,
-                                      headers: nil).responseJSON
-        { response in
-            print("response: \(response)")
+                                      headers: nil)
+        .responseJSON { response in
+            switch response.result {
+            case .success:
+                if let index = self.imageUploads.index(of: upload) {
+                    self.imageUploads.remove(at: index)
+                }
+            case .failure:
+                upload.status = .failed
+            }
+            completion?(response.result.isSuccess)
+            self.sendDidUpdateUploadsNotification()
         }
+    }
+
+    public func retryFailedUploads() {
+        var retryUploads: [ImageUpload] = []
+        let failed = imageUploads.filter({ $0.status == .failed })
+        for upload in failed {
+            if let index = imageUploads.index(of: upload) {
+                imageUploads.remove(at: index)
+                retryUploads.append(upload)
+            }
+        }
+
+        for retry in retryUploads {
+            uploadImage(retry.image, completion: nil)
+        }
+    }
+
+    private func sendDidUpdateUploadsNotification() {
+        NotificationCenter.default.post(name: HTTPService.didUpdateUploadsNotification,
+                                        object: nil)
+    }
+
+}
+
+
+public class ImageUpload: Equatable, Hashable {
+
+    public enum Status: Int {
+        case uploading
+        case failed
+    }
+
+    public let image: UIImage
+    public var status: Status
+
+    public init(image: UIImage, status: Status) {
+        self.image = image
+        self.status = status
+    }
+
+    public static func == (lhs: ImageUpload, rhs: ImageUpload) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+
+    public var hashValue: Int {
+        return image.hashValue ^ status.hashValue
     }
 
 }

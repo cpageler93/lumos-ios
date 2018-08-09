@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TJk-Bo-c5e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TJk-Bo-c5e">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +14,7 @@
         <!--Overview-->
         <scene sceneID="Ugd-4V-Ywy">
             <objects>
-                <viewController id="TJk-Bo-c5e" customClass="OverviewVC" customModule="WeddingPoelmeyer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TJk-Bo-c5e" customClass="OverviewVC" customModule="Lumos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5tj-bZ-NsV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,13 +24,13 @@
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hi1-9n-fP8">
                                     <size key="itemSize" width="150" height="141"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OverviewImageCollectionViewCell" id="con-Xi-XNw" customClass="OverviewImageCollectionViewCell" customModule="WeddingPoelmeyer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="141"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OverviewImageCollectionViewCell" id="con-Xi-XNw" customClass="OverviewImageCollectionViewCell" customModule="Lumos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="150" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="141"/>
@@ -51,6 +53,44 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OverviewUploadCollectionReusableView" id="EVt-vs-PPK" customClass="OverviewUploadCollectionReusableView" customModule="Lumos" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-XU-2YG">
+                                            <rect key="frame" x="8" y="15" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O17-Zt-kVD">
+                                            <rect key="frame" x="36" y="16" width="37.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" name="Secondary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69G-XE-DMb">
+                                            <rect key="frame" x="330" y="10" width="37" height="30"/>
+                                            <state key="normal" title="Retry">
+                                                <color key="titleColor" name="Primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="actionRetry:" destination="EVt-vs-PPK" eventType="touchUpInside" id="Hk1-sC-GqS"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="rfe-XU-2YG" firstAttribute="centerY" secondItem="EVt-vs-PPK" secondAttribute="centerY" id="6Kp-Vp-fMN"/>
+                                        <constraint firstAttribute="trailing" secondItem="69G-XE-DMb" secondAttribute="trailing" constant="8" id="71X-TV-gbj"/>
+                                        <constraint firstItem="O17-Zt-kVD" firstAttribute="centerY" secondItem="rfe-XU-2YG" secondAttribute="centerY" id="Epa-ec-Zk9"/>
+                                        <constraint firstItem="rfe-XU-2YG" firstAttribute="leading" secondItem="EVt-vs-PPK" secondAttribute="leading" constant="8" id="tLu-OB-yzf"/>
+                                        <constraint firstItem="69G-XE-DMb" firstAttribute="centerY" secondItem="EVt-vs-PPK" secondAttribute="centerY" id="vqe-vo-n7Z"/>
+                                        <constraint firstItem="O17-Zt-kVD" firstAttribute="leading" secondItem="rfe-XU-2YG" secondAttribute="trailing" constant="8" id="ygh-gT-QCz"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="activityIndicatorView" destination="rfe-XU-2YG" id="MF5-ui-Vv3"/>
+                                        <outlet property="buttonRetry" destination="69G-XE-DMb" id="rai-kC-Ecq"/>
+                                        <outlet property="labelUserInfo" destination="O17-Zt-kVD" id="MUz-p4-DYC"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="TJk-Bo-c5e" id="u9m-c8-aeU"/>
                                     <outlet property="delegate" destination="TJk-Bo-c5e" id="OzW-XN-PCc"/>
@@ -113,6 +153,12 @@
     </scenes>
     <resources>
         <image name="iconSettings" width="26" height="26"/>
+        <namedColor name="Primary">
+            <color red="1" green="0.23100000619888306" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary">
+            <color red="0.4779999852180481" green="0.4779999852180481" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
     <color key="tintColor" name="Primary"/>
 </document>

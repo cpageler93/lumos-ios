@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--Setup-->
         <scene sceneID="BI5-M9-n5w">
             <objects>
-                <viewController id="Zk0-fp-Kcu" customClass="SetupVC" customModule="WeddingPoelmeyer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zk0-fp-Kcu" customClass="SetupVC" customModule="Lumos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CmX-LT-YOE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +73,7 @@
                     <connections>
                         <outlet property="barButtonItemReload" destination="rYg-dZ-86v" id="tFh-tZ-jGZ"/>
                         <outlet property="tableViewServer" destination="4sV-pF-d7W" id="zdu-MI-Y1Q"/>
-                        <segue destination="bR0-lD-7dU" kind="show" identifier="overview" customClass="NavigationControllerRootSegue" customModule="WeddingPoelmeyer" customModuleProvider="target" animates="NO" id="h8a-Lu-2Qq"/>
+                        <segue destination="bR0-lD-7dU" kind="show" identifier="overview" customClass="NavigationControllerRootSegue" customModule="Lumos" customModuleProvider="target" animates="NO" id="h8a-Lu-2Qq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jik-ff-uGu" userLabel="First Responder" sceneMemberID="firstResponder"/>

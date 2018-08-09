@@ -12,5 +12,12 @@
 "server_preperation_failed" = "Connection failed";
 "server_searching" = "Searching";
 "server_setup_title" = "Initial Setup";
+"searching_for_server" = "Searching for\n\"%@\"";
+"server_not_found" = "\"%@\" not found";
 
 "overview_title" = "Overview";
+
+"singular_photo" = "photo";
+"plural_photo" = "photos";
+"uploading_photo" = "uploading %@";
+"failed" = "failed";

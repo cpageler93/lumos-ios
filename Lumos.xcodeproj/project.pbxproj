@@ -11,6 +11,8 @@
 		59147715210FA88700A0EE52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59147717210FA88700A0EE52 /* Localizable.strings */; };
 		5914771B210FA8AE00A0EE52 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5914771A210FA8AE00A0EE52 /* String+Localized.swift */; };
 		5914771C210FA8AE00A0EE52 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5914771A210FA8AE00A0EE52 /* String+Localized.swift */; };
+		591F8C4D211C30FB0064688F /* OverviewUploadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F8C4C211C30FB0064688F /* OverviewUploadCollectionReusableView.swift */; };
+		591F8C4E211C30FB0064688F /* OverviewUploadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F8C4C211C30FB0064688F /* OverviewUploadCollectionReusableView.swift */; };
 		5930495520FB8A400083AF40 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5930495420FB8A400083AF40 /* Camera.storyboard */; };
 		593D46E820FD2E390005734F /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974311B20F338550018969C /* InitialVC.swift */; };
 		593D46E920FD2E390005734F /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974312820F33E110018969C /* SetupVC.swift */; };
@@ -63,6 +65,7 @@
 		59147716210FA88700A0EE52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		59147718210FA89700A0EE52 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5914771A210FA8AE00A0EE52 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		591F8C4C211C30FB0064688F /* OverviewUploadCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewUploadCollectionReusableView.swift; sourceTree = "<group>"; };
 		5930495420FB8A400083AF40 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		593D470420FD2E390005734F /* WeddingPoelmeyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingPoelmeyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		593D470620FD2EBC0005734F /* Lumos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Lumos.xcassets; sourceTree = "<group>"; };
@@ -230,6 +233,7 @@
 				5974312020F33BCF0018969C /* Overview.storyboard */,
 				5974311E20F33BC60018969C /* OverviewVC.swift */,
 				596C476320F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift */,
+				591F8C4C211C30FB0064688F /* OverviewUploadCollectionReusableView.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -262,6 +266,7 @@
 				593D46F320FD2E390005734F /* Frameworks */,
 				593D46F820FD2E390005734F /* Resources */,
 				593D470020FD2E390005734F /* Carthage */,
+				590FC16C211B0DC100B784BD /* Build Number */,
 			);
 			buildRules = (
 			);
@@ -280,6 +285,7 @@
 				597430F920F334010018969C /* Frameworks */,
 				597430FA20F334010018969C /* Resources */,
 				5974311120F336040018969C /* Carthage */,
+				590FC16B211B0DB700B784BD /* Build Number */,
 			);
 			buildRules = (
 			);
@@ -364,6 +370,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		590FC16B211B0DB700B784BD /* Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+		590FC16C211B0DC100B784BD /* Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
 		593D470020FD2E390005734F /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,6 +456,7 @@
 				593D46EC20FD2E390005734F /* ImageDTO.swift in Sources */,
 				593D46ED20FD2E390005734F /* CameraVC.swift in Sources */,
 				5914771C210FA8AE00A0EE52 /* String+Localized.swift in Sources */,
+				591F8C4E211C30FB0064688F /* OverviewUploadCollectionReusableView.swift in Sources */,
 				593D46EE20FD2E390005734F /* OverviewImageCollectionViewCell.swift in Sources */,
 				593D46EF20FD2E390005734F /* NavigationControllerRootSegue.swift in Sources */,
 				593D46F020FD2E390005734F /* AppDelegate.swift in Sources */,
@@ -441,6 +476,7 @@
 				59C1307020F499BE00760A78 /* ImageDTO.swift in Sources */,
 				593FE0FB20FB601D0092B89F /* CameraVC.swift in Sources */,
 				5914771B210FA8AE00A0EE52 /* String+Localized.swift in Sources */,
+				591F8C4D211C30FB0064688F /* OverviewUploadCollectionReusableView.swift in Sources */,
 				596C476420F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift in Sources */,
 				5974312320F33C000018969C /* NavigationControllerRootSegue.swift in Sources */,
 				5974310020F334010018969C /* AppDelegate.swift in Sources */,
@@ -672,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 488D924Q6G;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -685,7 +722,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.pageler.christoph.lumos.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS AdHoc";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

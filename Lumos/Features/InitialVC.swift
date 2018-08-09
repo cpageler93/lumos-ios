@@ -17,6 +17,7 @@ class InitialVC: UIViewController {
     var titleLabel: UILabel?
     var lcTitleLabelBottom: NSLayoutConstraint?
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet var labelUserInfo: UILabel!
 
     @IBOutlet weak var buttonFindServer: LargeButton!
 
@@ -24,6 +25,7 @@ class InitialVC: UIViewController {
         super.viewDidLoad()
 
         buttonFindServer.alpha = 0
+        labelUserInfo.text = ""
         buttonFindServer.setTitle("find_server".localized(), for: .normal)
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
@@ -82,12 +84,20 @@ class InitialVC: UIViewController {
 
     private func handleEntryPoint() {
         activityIndicatorView.startAnimating()
+        let serverName = UserDefaults.standard.string(forKey: "serverName")
+        if let serverName = serverName {
+            labelUserInfo.text = String(format: "searching_for_server".localized(), serverName)
+        }
+
         HTTPService.shared.hasValidServerConfiguration { success in
             DispatchQueue.main.async {
                 self.activityIndicatorView.stopAnimating()
                 if success {
                     self.performSegue(withIdentifier: "overview", sender: self)
                 } else {
+                    if let serverName = serverName {
+                        self.labelUserInfo.text = String(format: "server_not_found".localized(), serverName)
+                    }
                     UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
                         self.buttonFindServer.alpha = 1
                     }, completion: nil)
