@@ -30,7 +30,6 @@
 		593D46F420FD2E390005734F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974311320F336320018969C /* Alamofire.framework */; };
 		593D46F520FD2E390005734F /* NetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974311520F3368E0018969C /* NetworkService.framework */; };
 		593D46F620FD2E390005734F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5974312C20F379EC0018969C /* SVProgressHUD.framework */; };
-		593D46F720FD2E390005734F /* SwiftyCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593FE0F720FB5FDE0092B89F /* SwiftyCam.framework */; };
 		593D46F920FD2E390005734F /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974312A20F33E1A0018969C /* Setup.storyboard */; };
 		593D46FA20FD2E390005734F /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5930495420FB8A400083AF40 /* Camera.storyboard */; };
 		593D46FB20FD2E390005734F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5974310820F334020018969C /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 		593D470A20FD2F2C0005734F /* WeddingPoelmeyer.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593D470920FD2F2C0005734F /* WeddingPoelmeyer.xcassets */; };
 		593FE0F420FB5A580092B89F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593FE0F320FB5A580092B89F /* Settings.storyboard */; };
 		593FE0F620FB5A600092B89F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593FE0F520FB5A600092B89F /* SettingsVC.swift */; };
-		593FE0F820FB5FDE0092B89F /* SwiftyCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593FE0F720FB5FDE0092B89F /* SwiftyCam.framework */; };
 		593FE0FB20FB601D0092B89F /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593FE0FA20FB601D0092B89F /* CameraVC.swift */; };
 		596C476420F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C476320F4A3E3004C9320 /* OverviewImageCollectionViewCell.swift */; };
 		5974310020F334010018969C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597430FF20F334010018969C /* AppDelegate.swift */; };
@@ -108,7 +106,6 @@
 				593D46F420FD2E390005734F /* Alamofire.framework in Frameworks */,
 				593D46F520FD2E390005734F /* NetworkService.framework in Frameworks */,
 				593D46F620FD2E390005734F /* SVProgressHUD.framework in Frameworks */,
-				593D46F720FD2E390005734F /* SwiftyCam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +116,6 @@
 				5974311420F336320018969C /* Alamofire.framework in Frameworks */,
 				5974311620F3368E0018969C /* NetworkService.framework in Frameworks */,
 				5974312D20F379EC0018969C /* SVProgressHUD.framework in Frameworks */,
-				593FE0F820FB5FDE0092B89F /* SwiftyCam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,14 +410,12 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NetworkService.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyCam.framework",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NetworkService.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyCam.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -436,14 +430,12 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NetworkService.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyCam.framework",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NetworkService.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyCam.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
