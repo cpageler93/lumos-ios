@@ -8,11 +8,19 @@
 
 
 import UIKit
-import SwiftyCam
 import AVFoundation
 
 
-class CameraVC: SwiftyCamViewController {
+class CameraVC: UIViewController {
+
+    fileprivate let captureSession = AVCaptureSession()
+    fileprivate var frontCamera: AVCaptureDevice?
+    fileprivate var rearCamera: AVCaptureDevice?
+    fileprivate var selectedCamera: AVCaptureDevice?
+    fileprivate var capturePhotoOutput = AVCapturePhotoOutput()
+    fileprivate var videoPreviewLayer = AVCaptureVideoPreviewLayer()
+    fileprivate var isFlashEnabled: Bool = false
+    fileprivate var deviceOrientation: UIDeviceOrientation?
 
     private var imagePicker: UIImagePickerController?
     @IBOutlet weak var stackViewCameraActions: UIStackView!
@@ -25,24 +33,117 @@ class CameraVC: SwiftyCamViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        cameraDelegate = self
-        doubleTapCameraSwitch = false
+        // prepare cameras
+        let deviceDiscovery = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera],
+                                                               mediaType: .video,
+                                                               position: .unspecified)
+        for device in deviceDiscovery.devices {
+            switch device.position {
+            case .front:
+                frontCamera = device
+            case .back:
+                rearCamera = device
+                do {
+                    try device.lockForConfiguration()
+                    device.focusMode = .continuousAutoFocus
+                    device.unlockForConfiguration()
+                } catch {
+
+                }
+            default:
+                break
+            }
+
+        }
+        updateCameraInputFrom(camera: rearCamera ?? frontCamera)
+
+        capturePhotoOutput.setPreparedPhotoSettingsArray([
+            AVCapturePhotoSettings(format: [
+                AVVideoCodecKey: AVVideoCodecType.jpeg
+            ])
+        ], completionHandler: nil)
+        if captureSession.canAddOutput(capturePhotoOutput) {
+            captureSession.addOutput(capturePhotoOutput)
+        }
+        captureSession.startRunning()
+
+        videoPreviewLayer.session = captureSession
+        videoPreviewLayer.videoGravity = .resizeAspectFill
+        videoPreviewLayer.connection?.videoOrientation = videoOrientation()
+
+        view.layer.insertSublayer(videoPreviewLayer, at: 0)
+        videoPreviewLayer.frame = view.frame
+
         updateFlashIcon()
+        barButtonItemUsePhoto.title = "use_photo".localized()
         navigationItem.rightBarButtonItem = nil
-        videoQuality = .resolution3840x2160
-        shouldUseDeviceOrientation = true
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
-        if let stillImageOutput = session.outputs.first(where: { ($0 as? AVCaptureStillImageOutput) != nil }) as? AVCaptureStillImageOutput {
-            stillImageOutput.isHighResolutionStillImageOutputEnabled = true
+        videoPreviewLayer.frame = view.frame
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        videoPreviewLayer.connection?.videoOrientation = videoOrientation()
+    }
+
+    private func videoOrientation() -> AVCaptureVideoOrientation {
+        self.deviceOrientation = UIDevice.current.orientation
+
+        switch UIDevice.current.orientation {
+        case .faceUp:
+            return .portrait
+        case .faceDown:
+            return .portrait
+        case .landscapeLeft:
+            return .landscapeRight
+        case .landscapeRight:
+            return .landscapeLeft
+        case .portrait:
+            return .portrait
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        default:
+            return .portrait
         }
     }
 
+    private func updateCameraInputFrom(camera: AVCaptureDevice?) {
+        selectedCamera = camera ?? selectedCamera
+        guard let selectedCamera = selectedCamera else { return }
+
+        // remove old inputs
+        for input in captureSession.inputs {
+            captureSession.removeInput(input)
+        }
+
+        guard let input = try? AVCaptureDeviceInput(device: selectedCamera) else { return }
+        if captureSession.canAddInput(input) {
+            captureSession.addInput(input)
+        }
+    }
+
+    private func switchCamera() {
+        if selectedCamera == frontCamera {
+            updateCameraInputFrom(camera: rearCamera)
+        } else {
+            updateCameraInputFrom(camera: frontCamera)
+        }
+    }
+
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        if let stillImageOutput = session.outputs.first(where: { ($0 as? AVCaptureStillImageOutput) != nil }) as? AVCaptureStillImageOutput {
+//            stillImageOutput.isHighResolutionStillImageOutputEnabled = true
+//        }
+//    }
+
     private func updateFlashIcon() {
-        let image = flashEnabled ? UIImage(named: "iconCameraFlashActive") : UIImage(named: "iconCameraFlash")
+        let image = isFlashEnabled ? UIImage(named: "iconCameraFlashActive") : UIImage(named: "iconCameraFlash")
         buttonFlash.setImage(image, for: .normal)
     }
 
@@ -55,11 +156,16 @@ class CameraVC: SwiftyCamViewController {
     }
 
     @IBAction func actionTakePicture(_ sender: UIButton) {
-        takePhoto()
+        let settings = AVCapturePhotoSettings()
+        settings.flashMode = isFlashEnabled ? .on : .off
+        settings.isAutoStillImageStabilizationEnabled = true
+
+
+        capturePhotoOutput.capturePhoto(with: settings, delegate: self)
     }
 
     @IBAction func actionFlash(_ sender: UIButton) {
-        flashEnabled = !flashEnabled
+        isFlashEnabled = !isFlashEnabled
         updateFlashIcon()
     }
 
@@ -91,11 +197,46 @@ class CameraVC: SwiftyCamViewController {
     }
 }
 
+extension CameraVC: AVCapturePhotoCaptureDelegate {
 
-extension CameraVC: SwiftyCamViewControllerDelegate {
+    fileprivate func getImageOrientation(forDevice device: AVCaptureDevice) -> UIImageOrientation {
+        guard let deviceOrientation = deviceOrientation else {
+            return device == rearCamera ? .right : .leftMirrored
+        }
 
-    func swiftyCam(_ swiftyCam: SwiftyCamViewController,
-                   didTake photo: UIImage) {
+        switch deviceOrientation {
+        case .landscapeLeft:
+            return device == rearCamera ? .up : .downMirrored
+        case .landscapeRight:
+            return device == rearCamera ? .down : .upMirrored
+        case .portraitUpsideDown:
+            return device == rearCamera ? .left : .rightMirrored
+        default:
+            return device == rearCamera ? .right : .leftMirrored
+        }
+    }
+
+    fileprivate func processPhoto(_ imageData: Data) -> UIImage? {
+        guard let dataProvider = CGDataProvider(data: imageData as CFData) else { return nil }
+        guard let cgImageRef = CGImage(jpegDataProviderSource: dataProvider,
+                                       decode: nil,
+                                       shouldInterpolate: true,
+                                       intent: CGColorRenderingIntent.defaultIntent) else { return nil }
+        guard let camera = selectedCamera else { return nil }
+
+        // Set proper orientation for photo
+        // If camera is currently set to front camera, flip image
+        let image = UIImage(cgImage: cgImageRef,
+                            scale: 1.0,
+                            orientation: getImageOrientation(forDevice: camera))
+
+        return image
+    }
+
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let photoData = photo.fileDataRepresentation() else { return }
+        guard let image = processPhoto(photoData) else { return }
+
         stackViewCameraActions.isUserInteractionEnabled = false
 
         viewPhotoPreview.alpha = 0
@@ -106,7 +247,7 @@ extension CameraVC: SwiftyCamViewControllerDelegate {
         viewPhotoPreview.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         viewPhotoPreview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
-        imageViewPhotoPreview.image = photo
+        imageViewPhotoPreview.image = image
 
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.viewPhotoPreview.alpha = 1
