@@ -57,6 +57,7 @@ class CameraVC: UIViewController {
         }
         updateCameraInputFrom(camera: rearCamera ?? frontCamera)
 
+        capturePhotoOutput.isHighResolutionCaptureEnabled = true
         capturePhotoOutput.setPreparedPhotoSettingsArray([
             AVCapturePhotoSettings(format: [
                 AVVideoCodecKey: AVVideoCodecType.jpeg
@@ -118,6 +119,12 @@ class CameraVC: UIViewController {
         // remove old inputs
         for input in captureSession.inputs {
             captureSession.removeInput(input)
+        }
+
+        if selectedCamera == frontCamera {
+            captureSession.sessionPreset = .high
+        } else {
+            captureSession.sessionPreset = .hd4K3840x2160
         }
 
         guard let input = try? AVCaptureDeviceInput(device: selectedCamera) else { return }
