@@ -21,3 +21,4 @@
 "plural_photo" = "photos";
 "uploading_photo" = "uploading %@";
 "failed" = "failed";
+"retry" = "Retry";

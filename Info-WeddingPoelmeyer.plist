@@ -24,8 +24,6 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Take Photos</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Use Micro</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Choose Photos from Gallery</string>
 	<key>UILaunchStoryboardName</key>

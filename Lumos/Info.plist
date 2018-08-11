@@ -19,13 +19,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>35</string>
+	<string>45</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Take Photos</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Use Micro</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Choose Photos from Gallery</string>
 	<key>UILaunchStoryboardName</key>

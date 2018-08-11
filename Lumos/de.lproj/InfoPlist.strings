@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Lumos
+
+  Created by Christoph Pageler on 11.08.18.
+  Copyright © 2018 Christoph Pageler. All rights reserved.
+*/
+
+
+"NSCameraUsageDescription" = "Ermögliche Lumos auf deine Kamera zuzugreifen und Fotos mit deinen Freunden zu teilen.";

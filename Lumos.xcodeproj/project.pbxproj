@@ -11,6 +11,8 @@
 		59147715210FA88700A0EE52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59147717210FA88700A0EE52 /* Localizable.strings */; };
 		5914771B210FA8AE00A0EE52 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5914771A210FA8AE00A0EE52 /* String+Localized.swift */; };
 		5914771C210FA8AE00A0EE52 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5914771A210FA8AE00A0EE52 /* String+Localized.swift */; };
+		5916C1A9211F15BF00B972F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5916C1AC211F15BF00B972F5 /* InfoPlist.strings */; };
+		5916C1AA211F15BF00B972F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5916C1AC211F15BF00B972F5 /* InfoPlist.strings */; };
 		591F8C4D211C30FB0064688F /* OverviewUploadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F8C4C211C30FB0064688F /* OverviewUploadCollectionReusableView.swift */; };
 		591F8C4E211C30FB0064688F /* OverviewUploadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F8C4C211C30FB0064688F /* OverviewUploadCollectionReusableView.swift */; };
 		5930495520FB8A400083AF40 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5930495420FB8A400083AF40 /* Camera.storyboard */; };
@@ -65,6 +67,8 @@
 		59147716210FA88700A0EE52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		59147718210FA89700A0EE52 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5914771A210FA8AE00A0EE52 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		5916C1AB211F15BF00B972F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5916C1AD211F15C100B972F5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		591F8C4C211C30FB0064688F /* OverviewUploadCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewUploadCollectionReusableView.swift; sourceTree = "<group>"; };
 		5930495420FB8A400083AF40 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		593D470420FD2E390005734F /* WeddingPoelmeyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingPoelmeyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +192,7 @@
 				5974312220F33C000018969C /* NavigationControllerRootSegue.swift */,
 				5974310B20F334020018969C /* Info.plist */,
 				596C45D1210F959C005CFE3B /* Info-WeddingPoelmeyer.plist */,
+				5916C1AC211F15BF00B972F5 /* InfoPlist.strings */,
 				59147717210FA88700A0EE52 /* Localizable.strings */,
 			);
 			path = Lumos;
@@ -348,6 +353,7 @@
 				593D46FD20FD2E390005734F /* Settings.storyboard in Resources */,
 				593D46FE20FD2E390005734F /* Assets.xcassets in Resources */,
 				593D46FF20FD2E390005734F /* Main.storyboard in Resources */,
+				5916C1AA211F15BF00B972F5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +370,7 @@
 				593FE0F420FB5A580092B89F /* Settings.storyboard in Resources */,
 				5974310720F334020018969C /* Assets.xcassets in Resources */,
 				5974310520F334010018969C /* Main.storyboard in Resources */,
+				5916C1A9211F15BF00B972F5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +502,15 @@
 				59147718210FA89700A0EE52 /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5916C1AC211F15BF00B972F5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5916C1AB211F15BF00B972F5 /* en */,
+				5916C1AD211F15C100B972F5 /* de */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		5974310320F334010018969C /* Main.storyboard */ = {
