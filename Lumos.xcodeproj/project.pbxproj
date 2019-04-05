@@ -565,6 +565,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.pageler.christoph.lumos.ios.wedding.poelmeyer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "784504ba-e3cf-45a3-b2e0-315ac3fe7b8f";
 				PROVISIONING_PROFILE_SPECIFIER = "Lumos iOS Wedding Poelmeyer AdHoc";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

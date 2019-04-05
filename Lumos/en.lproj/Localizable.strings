@@ -23,3 +23,6 @@
 "failed" = "failed";
 "retry" = "Retry";
 "use_photo" = "Done";
+
+"camera_permissions_title" = "Permission";
+"camera_permissions_message" = "The app doesn't have the permission to use the camera";

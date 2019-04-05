@@ -33,6 +33,44 @@ class CameraVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkCapturePermissions()
+
+        videoPreviewLayer.videoGravity = .resizeAspectFill
+        videoPreviewLayer.connection?.videoOrientation = videoOrientation()
+
+        view.layer.insertSublayer(videoPreviewLayer, at: 0)
+        videoPreviewLayer.frame = view.frame
+
+        updateFlashIcon()
+        barButtonItemUsePhoto.title = "use_photo".localized()
+        navigationItem.rightBarButtonItem = nil
+    }
+
+    private func checkCapturePermissions() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            initializeCameraInput()
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { _ in
+                DispatchQueue.main.async {
+                    self.checkCapturePermissions()
+                }
+            }
+        case .restricted:
+            fallthrough
+        case .denied:
+            let alert = UIAlertController(title: "camera_permissions_title".localized(),
+                                          message: "camera_permissions_message".localized(),
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            present(alert, animated: true, completion: nil)
+        }
+
+    }
+
+    private func initializeCameraInput() {
         // prepare cameras
         let deviceDiscovery = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera],
                                                                mediaType: .video,
@@ -55,29 +93,25 @@ class CameraVC: UIViewController {
             }
 
         }
-        updateCameraInputFrom(camera: rearCamera ?? frontCamera)
+        let camera = rearCamera ?? frontCamera
+        var preset = AVCaptureSession.Preset.hd4K3840x2160
+        if camera == frontCamera {
+            preset = .high
+        }
+        updateCameraInputFrom(camera: camera, preset: preset)
 
         capturePhotoOutput.isHighResolutionCaptureEnabled = true
         capturePhotoOutput.setPreparedPhotoSettingsArray([
             AVCapturePhotoSettings(format: [
                 AVVideoCodecKey: AVVideoCodecType.jpeg
-            ])
-        ], completionHandler: nil)
+                ])
+            ], completionHandler: nil)
         if captureSession.canAddOutput(capturePhotoOutput) {
             captureSession.addOutput(capturePhotoOutput)
         }
         captureSession.startRunning()
 
         videoPreviewLayer.session = captureSession
-        videoPreviewLayer.videoGravity = .resizeAspectFill
-        videoPreviewLayer.connection?.videoOrientation = videoOrientation()
-
-        view.layer.insertSublayer(videoPreviewLayer, at: 0)
-        videoPreviewLayer.frame = view.frame
-
-        updateFlashIcon()
-        barButtonItemUsePhoto.title = "use_photo".localized()
-        navigationItem.rightBarButtonItem = nil
     }
 
     override func viewDidLayoutSubviews() {
@@ -112,7 +146,7 @@ class CameraVC: UIViewController {
         }
     }
 
-    private func updateCameraInputFrom(camera: AVCaptureDevice?) {
+    private func updateCameraInputFrom(camera: AVCaptureDevice?, preset: AVCaptureSession.Preset) {
         selectedCamera = camera ?? selectedCamera
         guard let selectedCamera = selectedCamera else { return }
 
@@ -121,33 +155,23 @@ class CameraVC: UIViewController {
             captureSession.removeInput(input)
         }
 
-        if selectedCamera == frontCamera {
-            captureSession.sessionPreset = .high
-        } else {
-            captureSession.sessionPreset = .hd4K3840x2160
-        }
+        captureSession.sessionPreset = preset
 
         guard let input = try? AVCaptureDeviceInput(device: selectedCamera) else { return }
         if captureSession.canAddInput(input) {
             captureSession.addInput(input)
+        } else {
+            updateCameraInputFrom(camera: camera, preset: .high)
         }
     }
 
     private func switchCamera() {
         if selectedCamera == frontCamera {
-            updateCameraInputFrom(camera: rearCamera)
+            updateCameraInputFrom(camera: rearCamera, preset: .hd4K3840x2160)
         } else {
-            updateCameraInputFrom(camera: frontCamera)
+            updateCameraInputFrom(camera: frontCamera, preset: .high)
         }
     }
-
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        if let stillImageOutput = session.outputs.first(where: { ($0 as? AVCaptureStillImageOutput) != nil }) as? AVCaptureStillImageOutput {
-//            stillImageOutput.isHighResolutionStillImageOutputEnabled = true
-//        }
-//    }
 
     private func updateFlashIcon() {
         let image = isFlashEnabled ? UIImage(named: "iconCameraFlashActive") : UIImage(named: "iconCameraFlash")
