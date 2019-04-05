@@ -84,8 +84,8 @@ extension OverviewVC: UICollectionViewDataSource {
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
-        case UICollectionElementKindSectionHeader:
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
+        case UICollectionView.elementKindSectionHeader:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                        withReuseIdentifier: "OverviewUploadCollectionReusableView",
                                                                        for: indexPath) as! OverviewUploadCollectionReusableView
             return view

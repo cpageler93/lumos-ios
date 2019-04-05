@@ -1,4 +1,4 @@
-github "Alamofire/Alamofire" "4.7.3"
+github "Alamofire/Alamofire" "4.8.2"
 github "SVProgressHUD/SVProgressHUD" "2.2.5"
-github "realm/realm-cocoa" "v3.10.0"
+github "realm/realm-cocoa" "v3.14.1"
 github "thepeaklab/NetworkService" "0.3.0"

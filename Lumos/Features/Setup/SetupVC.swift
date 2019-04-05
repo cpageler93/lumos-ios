@@ -59,7 +59,7 @@ class SetupVC: UIViewController {
     }
 
     func updateService(_ service: NetService, address: String?) {
-        if let index = services.index(where: { (s, a) -> Bool in
+        if let index = services.firstIndex(where: { (s, a) -> Bool in
             return s == service
         }) {
             services[index] = (service, address)

@@ -66,6 +66,8 @@ class CameraVC: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }))
             present(alert, animated: true, completion: nil)
+        @unknown default:
+            break
         }
 
     }
@@ -230,7 +232,7 @@ class CameraVC: UIViewController {
 
 extension CameraVC: AVCapturePhotoCaptureDelegate {
 
-    fileprivate func getImageOrientation(forDevice device: AVCaptureDevice) -> UIImageOrientation {
+    fileprivate func getImageOrientation(forDevice device: AVCaptureDevice) -> UIImage.Orientation {
         guard let deviceOrientation = deviceOrientation else {
             return device == rearCamera ? .right : .leftMirrored
         }
@@ -292,15 +294,11 @@ extension CameraVC: UINavigationControllerDelegate { }
 
 extension CameraVC: UIImagePickerControllerDelegate {
 
-    // SWIFT 4.2 CODE
-    //    func imagePickerController(_ picker: UIImagePickerController,
-    //                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        func imagePickerController(_ picker: UIImagePickerController,
+                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-// SWIFT 4.2 CODE
-//        guard let image = info[.originalImage] as? UIImage else { return }
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        guard let image = info[.originalImage] as? UIImage else { return }
+
         HTTPService.shared.uploadImage(image) { success in
             print("success: \(success)")
         }

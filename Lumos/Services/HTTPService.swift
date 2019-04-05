@@ -134,9 +134,7 @@ class HTTPService {
         imageUploads.append(upload)
         sendDidUpdateUploadsNotification()
 
-// SWIFT 4.2 CODE
-//        guard let imageData = image.jpegData(compressionQuality: 1) else {
-        guard let imageData = UIImageJPEGRepresentation(image, 1) else {
+        guard let imageData = image.jpegData(compressionQuality: 1) else {
             completion?(false)
             return
         }
@@ -154,7 +152,7 @@ class HTTPService {
         .responseJSON { response in
             switch response.result {
             case .success:
-                if let index = self.imageUploads.index(of: upload) {
+                if let index = self.imageUploads.firstIndex(of: upload) {
                     self.imageUploads.remove(at: index)
                 }
             case .failure:
@@ -169,7 +167,7 @@ class HTTPService {
         var retryUploads: [ImageUpload] = []
         let failed = imageUploads.filter({ $0.status == .failed })
         for upload in failed {
-            if let index = imageUploads.index(of: upload) {
+            if let index = imageUploads.firstIndex(of: upload) {
                 imageUploads.remove(at: index)
                 retryUploads.append(upload)
             }
@@ -207,8 +205,9 @@ public class ImageUpload: Equatable, Hashable {
         return lhs.hashValue == rhs.hashValue
     }
 
-    public var hashValue: Int {
-        return image.hashValue ^ status.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(image)
+        hasher.combine(status)
     }
 
 }
